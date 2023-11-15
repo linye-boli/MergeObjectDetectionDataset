@@ -71,4 +71,8 @@ Merged Object Detection Dataset
     - 标签名称：数据集名-imgId.csv
 
 - 标签内容：
-    
+
+## windows 本地链接NAS服务器
+- NAS服务器地址：\\192.168.203.3
+- 用户名：linye
+- 密码：123
