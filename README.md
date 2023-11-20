@@ -61,6 +61,21 @@ Merged Object Detection Dataset
 
 \\CORE-STORAGE\BoLiTech\RDTeam\01_BDAI\merged_data
 
+merge_data 的文件结构为
+
+- merged_data
+    - images
+        - xxx_part001
+        - xxx_part002
+        - xxx_part003
+        - yyy_part001
+        - yyy_part002
+        - ...
+    - labels
+        - xxx
+        - yyy 
+        - ...
+
 ## 原始数据集处理脚本
 
 ## 原始数据集MetaInfo
