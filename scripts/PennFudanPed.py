@@ -55,7 +55,6 @@ def save_bboxes(bboxes, outpath):
             f.write(' '.join([str(x) for x in bbox]))
             f.write('\n')
 
-
 if __name__ == '__main__':
 
     data_root = 'C:\\Users\\LINYE\Desktop\\工作内容\\merge_data\\PennFudanPed\\PennFudanPed'
