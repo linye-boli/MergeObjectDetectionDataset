@@ -18,7 +18,6 @@ def xml2txt(xmlpath,savepath,savename):
     output = open(os.path.join(savepath, savename),'w')
 
     for obj in root.findall('object'):
-        
         label = obj.find('name').text
         w= int(root.find('size/width').text)
         h = int(root.find('size/height').text)
@@ -47,11 +46,7 @@ if __name__ == '__main__':
     os.makedirs(remotelabel_root, exist_ok=True)
 
     #dataroot=[os.path.join(data_root,x) for x in os.listdir(data_root) if os.path.isdir(os.path.join(data_root,x))]
-    #dataroot=[os.path.join(data_root,x) for x in os.listdir(data_root) if x=='smoking' or x=='smoking2']
-    dataroot=[os.path.join(data_root,x) for x in os.listdir(data_root) if  x=='smoking2']
-    print(dataroot)
-
- 
+    dataroot=[os.path.join(data_root,x) for x in os.listdir(data_root) if x=='smoking' or x=='smoking2']
 
     for i in dataroot:
         
