@@ -22,7 +22,6 @@ Merged Object Detection Dataset
     1. 安全帽
     2. 帽子
     3. 其他头盔
-    4. 
 * 动作
     1. 下蹲
     2. 摔倒
@@ -51,17 +50,20 @@ Merged Object Detection Dataset
 * 设施状态
     1. 安全门开
 
+
 ## 监控视角数据集下载
 
 1. https://tianchi.aliyun.com/dataset/146450
 2. https://blog.csdn.net/Strive_For_Future/article/details/114854674
 3. https://viratdata.org/#getting-data
 
-## 数据集存储位置
+## 数据集存储
 
-\\CORE-STORAGE\BoLiTech\RDTeam\01_BDAI\merged_data
+### 目标存储位置
 
-merge_data 的文件结构为
+\\192.168.203.3\BoLiTech\RDTeam\01_BDAI\merged_data
+
+### merge_data 的文件结构为
 
 - merged_data
     - images
@@ -75,6 +77,20 @@ merge_data 的文件结构为
         - xxx
         - yyy 
         - ...
+    - Annotations
+        - xxx_part001
+            - cls1_anns（yolo 格式数据输出）
+            - cls2_anns
+            - cls3_anns
+            - ...
+        - xxx_part002
+            - cls1_anns
+            - cls2_anns
+            - cls3_anns
+            - ...
+        - ...
+        
+            
 
 ## 原始数据集处理脚本
 
@@ -82,8 +98,8 @@ merge_data 的文件结构为
 
 ## 目标检测数据格式
 - 数据对格式：
-    - 图像名称：数据集名-imgId.jpg
-    - 标签名称：数据集名-imgId.csv
+    - 图像名称：img_nm.jpg/img_nm.png
+    - 标签名称：img_nm.txt
 
 - 标签内容：
 
