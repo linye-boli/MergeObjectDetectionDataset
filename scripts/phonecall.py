@@ -47,6 +47,22 @@ def mkdir_part(file_indx,remote_root,data_root,remotelabel_root=None):
         return file_indx,img_path
 
 
+def class_modi_remote(txt_in,txt_out):
+    '''
+    txt中的class改为10
+    存储
+    '''
+    
+    with open(txt_in,'r+') as file: 
+        lines=file.readlines()
+        for line in lines:         
+            newcotent='10'+' '
+            for i in line.split(' ')[1:-1]:newcotent=newcotent+i+' '
+            newcotent+=line.split(' ')[-1]
+            txt_out.write(newcotent)
+                          
+    txt_out.close()
+
 
 
 
@@ -95,12 +111,15 @@ if __name__ == '__main__':
             if img_resolution_check(im): # 核验分辨率
                 lab=lab_dict[nm]
                 indx+=1
+
+                txt_output = open( os.path.join(label_path,nm+'.txt'),'w')
+                class_modi_remote(lab,txt_output) 
                 shutil.copyfile(im, os.path.join(img_path,nm+'.jpeg'))
-                shutil.copyfile(lab, os.path.join(label_path,nm+'.txt'))
+
             else: continue       
             if indx % 1000==0: #每1000创建一个part文件
                 fileindx,img_path,label_path=mkdir_part(fileindx,remote_root,data_root,remotelabel_root)
-        
+
     #转存无标签图像
     if len(nolabel_samples)!=0:
         for nm in tqdm(nolabel_samples, total=len(nolabel_samples)):
